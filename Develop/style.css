@@ -69,3 +69,15 @@ textarea{
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
+
+.btnAdd {
+  background-color: #06AED5;
+}
+
+.btnRemove {
+  background-color: #ff6961;
+}
+
+.time-stamp {
+  
+}

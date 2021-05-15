@@ -26,13 +26,71 @@
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
+      <!--Nav buttons-->
+        <button id="add-event" class="btn btn-block btnAdd" data-toggle="modal" data-target="#event-form-modal">
+          <span class=""></span>Add Event
+        </button> 
+        <button id="remove-events" class="btn btn-block btnRemove">
+          <span class=""></span>Clear Schedule
+        </button>
+        <!--START day progress bar-->
+        <div class="mb-2">
+        <div class="progress mt-5">
+          <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div class="m-3">You are <span>PERCENT</span> of the way through your day!</div>
+      </div>
+        <!--END day progress bar-->
+        <!--Current date-->
+      <p id="currentDay" class="lead mx-auto"></p>
     </header>
-    <div class="container">
-      <!-- Timeblocks go here -->
+    <!--END HEADER-->
+
+    <!--START SCHEDULE-->
+
+      <!-- Timeblocks-->
+    <div class="row mx-5 mb-2 justify-content-around">
+        <div class="col-4 col-md-3 border">
+          <h4 class="align-middle text-center time-stamp">8:00 AM</h4>
+        </div>
+        <div class="col-8 col-md-9 border event-entry">
+          <p class="entry-area">hello</p>
+        </div>
     </div>
+
+    <!--Add Event Modal-->
+    <div class="modal fade" id="task-form-modal" tabindex="-1" role="dialog" aria-labelledby="task-form-modal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="task-form-modal">Add New Task</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="modalTaskDescription">Task description</label>
+              <textarea id="modalTaskDescription" rows="3" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="modalDueDate">Due date</label>
+              <input type="text" class="form-control" id="modalDueDate" placeholder="mm/dd/yyyy" autocomplete="off" />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-save">Save Task</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
